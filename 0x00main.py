@@ -1,5 +1,6 @@
 name = "Bob"
-if name =="Bob":
- print("Hello,Bob!")
+
+if name == "Bob":
+    print("Hello, Bob!")
 else:
- print("I don't know you.")
+    print("I don't know you.")
