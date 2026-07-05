@@ -1,12 +1,23 @@
-Students = { }
+students = []
 
-while (name := input("Enter name (or 'done'): ")) != 'done':
-    score = float(input("score:"))
-    grade = ('F','D','C','B','A')[min(int(score//10),4)]
+while (name := input("Enter name (or 'done'): ")) != "done":
+    score = float(input("Score: "))
 
-    Students.append((name,score,grade))
+    if score >= 90:
+        grade = "A"
+    elif score >= 80:
+        grade = "B"
+    elif score >= 70:
+        grade = "C"
+    elif score >= 60:
+        grade = "D"
+    else:
+        grade = "F"
 
-    print("/n--- Report --")
-    for name, score, grade in Students:
-        print(f"{name}:{score},{grade}")
+    students.append((name, score, grade))
+
+print("\n--- Report ---")
+
+for name, score, grade in students:
+    print(f"{name}: {score}, {grade}")
 
