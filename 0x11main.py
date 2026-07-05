@@ -2,30 +2,40 @@ print("Welcome to MiniMart!")
 
 cart = {}
 
-choice = input("\n1. Add  2. View  3. Remove  4. Exit: ")
+while True:
+    print("1. Add item to cart")
+    print("2. Remove item from cart")
+    print("3. View cart")
+    print("4. Checkout")
 
-while choice != "4":
+    choice = input()
+
     if choice == "1":
         item = input("Item: ")
         quantity = int(input("Quantity: "))
         cart[item] = cart.get(item, 0) + quantity
 
     elif choice == "2":
-        if cart:
-            print(cart)
-        else:
-            print("Cart is empty")
-
-    elif choice == "3":
         item = input("Item to remove: ")
         cart.pop(item, None)
 
-    else:
-        print("Invalid choice")
+    elif choice == "3":
+        if cart:
+            for item, quantity in cart.items():
+                print(f"{item}: {quantity}")
+        else:
+            print("Cart is empty.")
 
-    choice = input("\n1. Add  2. View  3. Remove  4. Exit: ")
+    elif choice == "4":
+        break
+
+    else:
+        print("Invalid choice.")
+
+print("Thank you for shopping! You bought:")
 
 if cart:
-    print("\nFinal Cart:", cart)
+    for item, quantity in cart.items():
+        print(f"{item}: {quantity}")
 else:
-    print("\nFinal Cart: Empty")
+    print("Nothing (your cart was empty).")
