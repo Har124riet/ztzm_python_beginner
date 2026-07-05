@@ -4,6 +4,6 @@ is_admin = False
 if is_logged_in and is_admin:
     print("welcome Admin!")
 elif is_logged_in and not is_admin:
-    print("welcome user!")
+    print("welcome User!")
 else:
     print("Access Denied.please log in.")
